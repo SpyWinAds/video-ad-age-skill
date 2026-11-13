@@ -9,7 +9,7 @@ Free web version, no AI needed: https://spywinads.com/video-ad-lookup
 ## Setup (3 minutes, free)
 
 Two parts, you need both: **connect the SpyWinAds MCP** (the data) and **add this skill** (the instructions). The MCP sign-in step creates a
-free SpyWinAds account: 30 credits a day, no card. No GitHub account needed. Then try: `video này chạy bao lâu https://www.facebook.com/ads/library/?id=<id>`
+free SpyWinAds account: 30 credits a day, no card. No GitHub account needed. Then try: `how old is this ad video? https://www.facebook.com/ads/library/?id=<ad id>`
 
 | You use | Works? |
 |---|---|
@@ -30,14 +30,14 @@ Custom connectors are available on Free (one connector) and Skills too
 
    → Customize → **Skills** → **+** → Create skill → **Upload a skill** → pick the zip. Turn on Code execution (Settings → Capabilities)
    if Claude asks.
-3. New chat: `video này chạy bao lâu https://www.facebook.com/ads/library/?id=<id>`
+3. New chat: `how old is this ad video? https://www.facebook.com/ads/library/?id=<ad id>`
 
 ### ChatGPT (Plus / Pro / Business)
 1. Settings → Apps & Connectors → Advanced settings → **Developer mode** on → **Create** → name `SpyWinAds`, URL
    `https://spywinads.com/mcp`, Authentication **OAuth** → sign in → Allow.
 2. Create a **Project** → Instructions → paste all of
    [SKILL.md](https://raw.githubusercontent.com/SpyWinAds/video-ad-age-skill/main/SKILL.md).
-3. In that Project, turn SpyWinAds on (**+** → Developer mode) and type `video này chạy bao lâu https://www.facebook.com/ads/library/?id=<id>`.
+3. In that Project, turn SpyWinAds on (**+** → Developer mode) and type `how old is this ad video? https://www.facebook.com/ads/library/?id=<ad id>`.
 
 ChatGPT Free cannot add a custom MCP yet: use Claude.ai Free (above), or the free web tool https://spywinads.com/video-ad-lookup.
 
