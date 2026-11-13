@@ -12,25 +12,27 @@ Data comes from the **SpyWinAds MCP**: a library of Meta video ads shown in the 
 ## 0. Check the connection first
 
 No tool named `spywin_*` available → the user has not connected SpyWinAds yet. Do not guess numbers or analyse from memory: the user
-will trust those numbers. Give them the setup steps for where they are (section **Setup** at the end), and offer the free web tool
-https://spywinads.com/video-ad-lookup meanwhile. Wait until they are connected.
+will trust those numbers. Say in one line what they get once connected (real video age and how many stores run each video, straight
+from the library, in one lookup), give the setup steps for where they are (section **Setup** at the end), and offer the free web
+tool https://spywinads.com/video-ad-lookup meanwhile. Wait until they are connected.
 
-Each tool call uses 1 credit (free: 30 a day, paid plans: 100), so call the right tool once per input. If a tool says out of credits or
+`found: false` → call `spywin_queue_page_scan` only if it is in your tool list (ask the user one short question first), then follow
+with `spywin_get_scan_status(request_id=…)` and look up again. Not in your tool list → give the free scan link the tool returned.
+
+Each SpyWinAds tool call uses 1 credit (free: 30 a day, paid plans: 100), so call the right tool once per input. If a tool says out of credits or
 not signed in, repeat that message and link `https://spywinads.com/developers`.
 
-Answer in the language the user writes in, including table headers and the report lines below (they are written in English only
-as a template).
+Answer in the user's language, including table headers.
 
 ## 1. Look up the video
 
 Input: a Meta Ad Library link (`https://www.facebook.com/ads/library/?id=…`), a numeric ad ID, or a SpyWinAds `video_id` from another
 tool. Several links → one call each, max 5 unless asked.
 
-Call `spywin_lookup_video_ad(ad=…)` or `spywin_lookup_video_ad(video_id=…)`. You get the real video age (accurate to 1–2 days), the
+Call `spywin_lookup_video_ad(ad=…)` or `spywin_lookup_video_ad(video_id=…)`. You get the real video age (usually within 1–2 days), the
 first ad date, live ads, stores running it now and ever, and the earliest stores in the library.
 
-`found: false` → if `spywin_queue_page_scan` exists, ask one short question and call it with `kind="ad"`, follow with
-`spywin_get_scan_status(request_id=…)`, then look up again. Otherwise give the free scan link the tool returns.
+`found: false` → section 0 (`kind="ad"`).
 
 ## 2. What to point out
 
@@ -71,7 +73,7 @@ most ads → `spywin_spy_store_ads(domain)` · the product → `spywin_export_sh
 
 ## Limits
 
-This skill only reads SpyWinAds data: it does not scrape Facebook and never logs in to Facebook for the user (against Meta's terms, and it gets accounts locked).
+This skill only reads SpyWinAds data: it does not scrape Facebook and never logs in to the user's Facebook account.
 
 ## Setup (give this to users who are not connected)
 
@@ -81,7 +83,8 @@ Sign-up happens at the login step: free, 30 credits a day, no card.
   `https://spywinads.com/mcp` → Connect → sign in → Allow.
 - **ChatGPT** (Plus / Pro / Business; Free cannot add custom MCP yet, suggest Claude.ai Free): Settings → Apps & Connectors → Advanced →
   Developer mode → Create → URL `https://spywinads.com/mcp`, OAuth → sign in → Allow.
-- **Claude Code**: `claude mcp add --transport http spywinads https://spywinads.com/mcp`, then `/mcp` to sign in.
+- **Claude Code**: `claude mcp add --transport http spywinads https://spywinads.com/mcp`, then type `/mcp`, pick spywinads and
+  finish the sign-in in the browser (adding it alone does not connect it).
 - **Cursor / Codex / scripts**: API key at `https://spywinads.com/developers`, header `Authorization: Bearer <key>` (never in the URL).
 
 Want the full analysis (several stores, ad angles, Shopify CSV in one go)? Skill **spywinads-soi-ads**:
