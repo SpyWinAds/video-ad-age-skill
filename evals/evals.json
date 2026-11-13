@@ -1,0 +1,21 @@
+{
+ "skill_name": "spywinads-video-age",
+ "evals": [
+  {
+   "id": 1,
+   "name": "video-vi",
+   "prompt": "video này chạy bao lâu rồi, bao nhiêu shop đang chạy? https://www.facebook.com/ads/library/?id=1074671178905059",
+   "files": [],
+   "assertions": [
+    "Calls SpyWinAds tools at most 3 times",
+    "Answers in the user's language, incl. table headers",
+    "Video age given as date + number of days",
+    "Has a limits line: no spend / revenue data",
+    "Never claims profit / winning / making sales",
+    "First sentence answers age + stores now / ever",
+    "stores_ever equals the number of stores listed",
+    "Calls the earliest store earliest in the library, not the owner"
+   ]
+  }
+ ]
+}
