@@ -4,7 +4,10 @@ Free skill for **Claude, ChatGPT, Claude Code, Codex, Cursor**, powered by real 
 no Meta API key.
 Skill miễn phí: **Tra video quảng cáo** bằng dữ liệu thật của SpyWinAds. Không cào Facebook, không đăng nhập Facebook.
 
-Free web version, no AI needed: https://spywinads.com/video-ad-lookup
+Free web version, no AI needed: [spywinads.com/video-ad-lookup](https://spywinads.com/video-ad-lookup?utm_source=github&utm_medium=readme&utm_campaign=video-ad-age-skill)
+
+<p align="center"><img src="assets/ask-claude.gif" width="720" alt="Asking Claude how old a Facebook video ad is. SpyWinAds returns 21 days, first ad on 02/11 and the 5 stores running it."></p>
+<p align="center"><sub>A real answer in Claude (question asked in Vietnamese): the video's real age, the first ad date and every store running it.</sub></p>
 
 ## Setup (3 minutes, free)
 
@@ -40,7 +43,7 @@ Custom connectors are available on Free (one connector) and Skills too
    [SKILL.md](https://raw.githubusercontent.com/SpyWinAds/video-ad-age-skill/main/SKILL.md).
 3. In that Project, turn SpyWinAds on (**+** → Developer mode) and type `how old is this ad video? https://www.facebook.com/ads/library/?id=<ad id>`.
 
-ChatGPT Free cannot add a custom MCP yet: use Claude.ai Free (above), or the free web tool https://spywinads.com/video-ad-lookup.
+ChatGPT Free cannot add a custom MCP yet: use Claude.ai Free (above), or the free web tool [spywinads.com/video-ad-lookup](https://spywinads.com/video-ad-lookup?utm_source=github&utm_medium=readme&utm_campaign=video-ad-age-skill).
 
 ### Claude Code
 ```
@@ -50,7 +53,7 @@ git clone https://github.com/SpyWinAds/video-ad-age-skill ~/.claude/skills/spywi
 Then type `/mcp` → spywinads → finish the sign-in in the browser (adding it alone does not connect it).
 
 ### Codex / Cursor / other agents
-Free API key at https://spywinads.com/developers → MCP `https://spywinads.com/mcp`, header `Authorization: Bearer <key>` (never in the
+Free API key at [spywinads.com/developers](https://spywinads.com/developers?utm_source=github&utm_medium=readme&utm_campaign=video-ad-age-skill) → MCP `https://spywinads.com/mcp`, header `Authorization: Bearer <key>` (never in the
 URL). Paste SKILL.md into `AGENTS.md` / your rules.
 
 ## More SpyWinAds skills
@@ -69,4 +72,4 @@ URL). Paste SKILL.md into `AGENTS.md` / your rules.
 SpyWinAds users. Counts are the minimum ads observed: **no spend, reach, orders or revenue**. Many ads or many stores means tested or
 copied, **not proven to sell**.
 
-MIT license · SpyWinAds — https://spywinads.com
+MIT license · SpyWinAds — [spywinads.com](https://spywinads.com?utm_source=github&utm_medium=readme&utm_campaign=video-ad-age-skill)
